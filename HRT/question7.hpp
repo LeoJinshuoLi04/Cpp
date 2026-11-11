@@ -1,7 +1,6 @@
 /*
 
 Problem 5 — Custom Flat Hash Map
-Data structures · Templates · Cache performance · Rehashing
 Implement a hash map optimized for fast lookups and minimal pointer chasing, using an array with open addressing.
 
 1. Basic design: Implement insertion, lookup, and deletion with expected O(1) complexity. 
@@ -20,3 +19,4 @@ Implement a hash map optimized for fast lookups and minimal pointer chasing, usi
 Final challenge: Compare your implementation with std::unordered_map in terms of cache locality, 
 pointer stability, memory overhead, and tail latency.
 */
+

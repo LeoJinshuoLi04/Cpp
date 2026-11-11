@@ -1,7 +1,6 @@
 /*
 
 Problem 6 — Dynamic Order Book
-Ordered structures · Intrusive lists · Memory pools · Concurrency
 Design a limit order book that supports insertion, cancellation, and execution of orders, preserving price-time priority.
 
 1. Basic design: Support add(order), cancel(order_id), and match(). What data structures would you choose to efficiently 

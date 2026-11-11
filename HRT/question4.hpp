@@ -1,7 +1,6 @@
 /*
 
 Problem 2 — Indexed Priority Scheduler
-Heaps · Hash tables · Exception safety · Thread safety
 Design a scheduler that executes tasks according to their deadline, but also allows tasks to be cancelled or rescheduled.
 
 1. Basic design: Implement schedule(task, deadline) and execute_next() with O(log n) 

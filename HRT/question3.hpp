@@ -17,3 +17,48 @@ Design a memory pool that stores objects of type T and returns a handle when an 
 Final challenge: Can you keep the entire pool cache-friendly while guaranteeing O(1) handle lookup?
 */
 
+#include <vector>
+#include <stack>
+#include <optional>
+#include <atomic>
+
+
+template <typename T> 
+class MemoryPool {
+  private:
+  size_t index;
+  std::stack<size_t> free_;
+
+  struct Data {
+    size_t generation = 0;
+    std::optional<T> object = std::nullopt;
+    std::atomic<size_t> ref;
+  };
+
+  std::vector<Data> data_;
+
+  public:
+  struct Handle {
+    size_t index = 0;
+    size_t generation = 0;
+  };
+
+  Handle allocate(){
+    if(!free_.empty());
+    auto temp = free_.top();
+    free_.pop();
+    return {temp, data_[temp].generation};
+  }
+
+  std::optional<T>& get(handle handle){
+    if(data_[handle.index].generation != handle.generation) return std::nullopt;
+    return data_[handle].object;
+  }
+
+  void release(handle) {
+    free_.push(handle);
+    data_[handle.index].object = std::nullopt;
+    ++data_[handle.index].generation;
+  }
+
+};

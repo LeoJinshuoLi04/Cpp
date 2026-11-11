@@ -1,7 +1,6 @@
 /*
 
 Problem 4 — Out-of-Order Message Buffer
-Ring buffers · Sequence numbers · Atomics · Low latency
 A network feed delivers messages with monotonically increasing sequence numbers, but messages may arrive out of order.
 
 1. Basic design: Design a buffer that accepts (sequence_number, message) and emits messages in sequence order. 

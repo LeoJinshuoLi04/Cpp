@@ -1,7 +1,6 @@
 /*
 
 Problem 3 — A Cache with O(1) Eviction
-Intrusive containers · Pointers · Lifetimes · Locking
 
 Design a fixed-capacity LRU cache supporting get(key) and put(key, value) in O(1) average time.
 1. Basic design: How would you combine a hash table and a doubly linked list to achieve O(1) operations?

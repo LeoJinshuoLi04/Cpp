@@ -1,7 +1,6 @@
 /*
 
 Problem 7 — Concurrent Append-Only Log with Truncation
-Indexing · Segmented arrays · Atomics · Reclamation
 Design an in-memory log that supports appending records, reading by logical sequence number, and deleting old records.
 
 1. Basic design: Implement append(record) and get(sequence_number) in O(1), with monotonically increasing sequence numbers.
